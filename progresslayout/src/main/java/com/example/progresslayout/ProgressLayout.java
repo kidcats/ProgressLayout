@@ -27,6 +27,7 @@ public class ProgressLayout extends RelativeLayout {
     private int weight;//targetrect的宽高
     private int height;
     private float nowRectWeight;
+    private OnProgressCompleteListener listener;
 
 
 
@@ -44,7 +45,6 @@ public class ProgressLayout extends RelativeLayout {
     }
 
     private void init(Context context,AttributeSet attrs) {
-
         setWillNotDraw(false);
         TypedArray a=context.obtainStyledAttributes(attrs, R.styleable.ProgressLayout);
         color=a.getColor(R.styleable.ProgressLayout_reaccolor, Color.parseColor(ReadyAttrs.defaultcolor));
@@ -81,6 +81,11 @@ public class ProgressLayout extends RelativeLayout {
     public void setProgress(int progress){
         readyAttrs.setProgress(progress);
         invalidate();
+        if(readyAttrs.getProgress()==maxprogress){
+            listener.OnCompleteListener();
+        }else {
+            listener.OnProgressListener(progress);
+        }
         Log.i(TAG,"setProgress()");
     }
 
@@ -133,5 +138,13 @@ public class ProgressLayout extends RelativeLayout {
     public void setNowRectWeight(float nowRectWeight) {
         this.readyAttrs.getNowRect().right= (int) nowRectWeight;
         this.nowRectWeight = nowRectWeight;
+    }
+
+    /**
+     * 设置进度完成时的监听
+     * @param listener
+     */
+    public void setOnProgressCompleteListener(OnProgressCompleteListener listener){
+        this.listener=listener;
     }
 }

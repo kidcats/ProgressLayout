@@ -3,11 +3,13 @@ package com.example.kidcats.progresslayout;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.progresslayout.OnProgressCompleteListener;
 import com.example.progresslayout.ProgressLayout;
 import com.example.progresslayout.ReadyAttrs;
 
@@ -53,7 +55,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         void OnItemClickListener(View view, int position);
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, OnProgressCompleteListener {
         private TextView textView;
         private ProgressLayout progressLayout;
         public MyViewHolder(View itemView) {
@@ -67,6 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                     .setPaintAlpha(100)
                     .setReacolor(Color.GRAY);
             progressLayout.setReadyAttrs(attrs);
+            progressLayout.setOnProgressCompleteListener(this);
             textView.setOnClickListener(this);
         }
 
@@ -76,6 +79,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 itemClickListener.OnItemClickListener(v,getPosition());
                 progressLayout.startAnimator(progressLayout);
             }
+        }
+
+        @Override
+        public void OnProgressListener(int progress) {
+            Log.i("adapter",progress+" ");
+        }
+
+        @Override
+        public void OnCompleteListener() {
+            Log.i("adapter","进度完成 ");
+
         }
     }
 }
