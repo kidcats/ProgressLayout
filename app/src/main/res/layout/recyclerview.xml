@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.progresslayout.ProgressLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/progresslayout"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="1dp"
+    app:reaccolor="@color/rectcolor">
+
+    <TextView
+        android:padding="5dp"
+        android:id="@+id/text"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="progresslayout"/>
+
+</com.example.progresslayout.ProgressLayout>
