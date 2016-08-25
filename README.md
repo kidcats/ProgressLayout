@@ -8,6 +8,21 @@ ProgressLayout是一个实现了类似于进度条的layout
 
 ## 使用
 
+引用
+
+```gradle
+allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+
+dependencies {
+	        compile 'com.github.kidcats:ProgressLayout:6a7f09a0ba'
+	}
+
+```
 
 
 ```XML
@@ -28,6 +43,8 @@ ProgressLayout是一个实现了类似于进度条的layout
         android:text="progresslayout"/>
 
 </com.example.progresslayout.ProgressLayout>
+```
+
 
 然后在JAVA代码中
 
@@ -44,9 +61,13 @@ attrs.setMaxprogress(100)
 
 
 如果想精确的控制进度,只需要设置
+
+
 ```JAVA
+
 prgresslayout.setProgress(25);
 ```
+
 
 设置监听事件:
 
@@ -56,6 +77,8 @@ progressLayout.setOnProgressCompleteListener(this);
 ```
 
 实现以下两个方法:
+
+
 ```JAVA
         @Override
         public void OnProgressListener(int progress) {      

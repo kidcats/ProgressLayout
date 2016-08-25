@@ -24,7 +24,7 @@ public class ProgressLayout extends RelativeLayout {
     private int durction;
     private ReadyAttrs readyAttrs;
     private Rect rect;
-    private int weight;//targetrect的宽高
+    private int weight;//targetrect's weitht and heigtht;
     private int height;
     private float nowRectWeight;
     private OnProgressCompleteListener listener;
@@ -65,7 +65,7 @@ public class ProgressLayout extends RelativeLayout {
                     .setMaxprogress(maxprogress)
                     .setAnimationdurction(durction);
         }
-        readyAttrs.setReacWeight(weight)//在layout的内部计算好相应的宽高
+        readyAttrs.setReacWeight(weight)
                 .setReacHeight(height)
                 .setTargetrect(rect);
         readyAttrs.drawRect(canvas);
@@ -129,7 +129,7 @@ public class ProgressLayout extends RelativeLayout {
 
     /**
      * 用于设置ObjectAnimator
-     * @return
+     * @return return the rect's weight
      */
     public float getNowRectWeight() {
         return nowRectWeight;
@@ -142,7 +142,7 @@ public class ProgressLayout extends RelativeLayout {
 
     /**
      * 设置进度完成时的监听
-     * @param listener
+     * @param listener  this's function is setting the listener
      */
     public void setOnProgressCompleteListener(OnProgressCompleteListener listener){
         this.listener=listener;

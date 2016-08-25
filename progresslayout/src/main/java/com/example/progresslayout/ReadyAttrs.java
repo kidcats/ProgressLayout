@@ -41,7 +41,7 @@ public class ReadyAttrs {
 
     /**
      * draw rect
-     * @param canvas
+     * @param canvas return the canvas which we use
      */
     public void drawRect(Canvas canvas) {
         int setprogress=this.getProgress();
