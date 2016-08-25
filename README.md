@@ -27,8 +27,7 @@ ProgressLayout是一个实现了类似于进度条的layout
         android:layout_height="match_parent"
         android:text="progresslayout"/>
 
-</com.example.progresslayout.ProgressLayout>```
-
+</com.example.progresslayout.ProgressLayout>
 
 然后在JAVA代码中
 
@@ -49,26 +48,24 @@ attrs.setMaxprogress(100)
 prgresslayout.setProgress(25);
 ```
 
-设置监听事件
+设置监听事件:
 
 
 ```JAVA
 progressLayout.setOnProgressCompleteListener(this);
-
 ```
-实现以下两个方法
+
+实现以下两个方法:
 ```JAVA
-@Override
-        public void OnProgressListener(int progress) {
-            Log.i("adapter",progress+" ");
-        }
+        @Override
+        public void OnProgressListener(int progress) {      
+    
+      }
 
         @Override
         public void OnCompleteListener() {
-            Log.i("adapter","进度完成 ");
-
+    
         }
-
 ```
 
 结束 以上~
