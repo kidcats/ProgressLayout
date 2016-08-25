@@ -25,6 +25,9 @@ dependencies {
 ```
 
 
+使用方式
+
+
 ```XML
 <com.example.progresslayout.ProgressLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
