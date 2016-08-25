@@ -19,7 +19,7 @@ allprojects {
 	}
 
 dependencies {
-	        compile 'com.github.kidcats:ProgressLayout:6a7f09a0ba'
+	        compile 'com.github.kidcats:ProgressLayout:eab2c4cabc
 	}
 
 ```
